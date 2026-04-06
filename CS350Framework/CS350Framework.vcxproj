@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F72956AF-577D-47C1-93BE-1D614BDBEF38}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CS350Framework</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros">
+    <SDLVersion>SDL2-2.0.4</SDLVersion>
+    <ExternalLibrariesPath>External</ExternalLibrariesPath>
+    <SDLPath>$(ExternalLibrariesPath)\$(SDLVersion)</SDLPath>
+    <AntTweakBarPath>$(ExternalLibrariesPath)\AntTweakBar</AntTweakBarPath>
+    <HelpersPath>$(ExternalLibrariesPath)\Helpers</HelpersPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)'=='Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)'=='x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Platform)'=='Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="BuildProperties\Config.Win32.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Platform)'=='x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="BuildProperties\Config.Win32.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\Build\Out\x$(PlatformArchitecture)\$(Configuration)\$(ProjectName)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\Build\Out\x$(PlatformArchitecture)\$(Configuration)\$(ProjectName)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\Build\Out\x$(PlatformArchitecture)\$(Configuration)\$(ProjectName)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\Build\Out\x$(PlatformArchitecture)\$(Configuration)\$(ProjectName)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Precompiled.hpp</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>AssignmentFiles;$(SDLPath)\include;$(AntTweakBarPath);$(HelpersPath)\includes;$(SolutionDir)\CS350Framework;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4201;4100;4481</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Helpers.lib;SDL2.lib;SDL2main.lib;AntTweakBar.lib;Opengl32.lib;glu32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLPath)\lib\x86;$(AntTweakBarPath);OpenGL\;$(HelpersPath)\Libs\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+        copy "$(AntTweakBarPath)\AntTweakBar.dll" "$(OutDir)AntTweakBar.dll"
+        copy "$(SDLPath)\lib\x86\SDL2.dll" "$(OutDir)SDL2.dll"
+        call "$(ProjectDir)\CopyDataFiles" "$(ProjectDir)\DataFiles" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Precompiled.hpp</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>AssignmentFiles;$(SDLPath)\include;$(AntTweakBarPath);$(HelpersPath)\includes;$(SolutionDir)\CS350Framework;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4201;4100;4481</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Helpers64.lib;SDL2.lib;SDL2main.lib;AntTweakBar64.lib;Opengl32.lib;glu32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLPath)\lib\x64;$(AntTweakBarPath);OpenGL\;$(HelpersPath)\Libs\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+        copy "$(AntTweakBarPath)\AntTweakBar64.dll" "$(OutDir)AntTweakBar64.dll"
+        copy "$(SDLPath)\lib\x64\SDL2.dll" "$(OutDir)SDL2.dll"
+        call "$(ProjectDir)\CopyDataFiles" "$(ProjectDir)\DataFiles" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Precompiled.cpp">
+      <PrecompiledHeader Condition="'$(Platform)'=='Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Platform)'=='x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Main\Main.cpp" />
+    <ClCompile Include="Main\Support.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Assignment1Tests.cpp" />
+    <ClCompile Include="Assignment2Tests.cpp" />
+    <ClCompile Include="Assignment3Tests.cpp" />
+    <ClCompile Include="Assignment4Tests.cpp" />
+    <ClCompile Include="Assignment5Tests.cpp" />
+    <ClCompile Include="AssignmentFiles\BspTree.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Components.cpp" />
+    <ClCompile Include="AssignmentFiles\DebugDraw.cpp" />
+    <ClCompile Include="AssignmentFiles\DynamicAabbTree.cpp" />
+    <ClCompile Include="AssignmentFiles\Geometry.cpp" />
+    <ClCompile Include="Gizmo.cpp" />
+    <ClCompile Include="AssignmentFiles\Gjk.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="AssignmentFiles\Shapes.cpp" />
+    <ClCompile Include="AssignmentFiles\SimpleNSquared.cpp" />
+    <ClCompile Include="SpatialPartition.cpp" />
+    <ClCompile Include="UnitTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Main\Support.hpp" />
+    <ClInclude Include="Application.hpp" />
+    <ClInclude Include="AssignmentFiles\BspTree.hpp" />
+    <ClInclude Include="Camera.hpp" />
+    <ClInclude Include="Components.hpp" />
+    <ClInclude Include="AssignmentFiles\DebugDraw.hpp" />
+    <ClInclude Include="AssignmentFiles\DynamicAabbTree.hpp" />
+    <ClInclude Include="AssignmentFiles\Geometry.hpp" />
+    <ClInclude Include="Gizmo.hpp" />
+    <ClInclude Include="AssignmentFiles\Gjk.hpp" />
+    <ClInclude Include="Mesh.hpp" />
+    <ClInclude Include="Model.hpp" />
+    <ClInclude Include="Precompiled.hpp" />
+    <ClInclude Include="AssignmentFiles\Shapes.hpp" />
+    <ClInclude Include="AssignmentFiles\SimpleNSquared.hpp" />
+    <ClInclude Include="SimplePropertyBinding.hpp" />
+    <ClInclude Include="SpatialPartition.hpp" />
+    <ClInclude Include="UnitTests.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Math\Math.vcxproj">
+      <Project>{af89d0cf-f888-4aa3-941d-2c191c1bf16d}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

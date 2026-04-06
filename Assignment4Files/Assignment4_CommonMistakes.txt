@@ -1,0 +1,20 @@
+Assignment 4 Grading Common Mistakes:
+BspTree.cpp:
+  SplitTriangle:
+    Not doing the 9 case table
+    Not handling coplanar triangles
+    Incorrect splitting of quads
+  CalculateScore:
+    Including coplanar triangles
+  TreeConstruction:
+    Picking zero vector split planes
+  RayCasting:
+    Checking all triangles. This will lose most if not all points!
+    Not using the provided epsilons
+    Not handling the edge cases
+    Not using tMin/tMax
+  DebugDraw:
+    Not using level
+    Modifying a copy instead of a reference
+  Invert:
+    Incorrectly flipping a plane (not just negating .xyz)

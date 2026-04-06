@@ -1,0 +1,23 @@
+Assignment 3 Grading Common Mistakes:
+DynamicAabbTree.cpp:
+  Insertion/Update/Removal:
+    Finding a node isn't O(1)
+    Unstable ids
+    The algorithm being more than O(n)
+  Insertion:
+    Not fattening the aabb
+    Not rebalancing the tree by checking all parents
+    Wrong heuristic (delta surface area!)
+  Update:
+    Not checking the aabb first
+  Removal:
+    Not checking up the tree for reblancing (more than one can happen)
+  Rotation:
+    Recursively computing height or aabbs
+  Frustum:
+    Not using last axis. Should be stored per node
+  SelfQuery:
+    Not using a volume heuristic to determine how to "split" nodes
+  DebugDrawing:
+    Modifying a copy instead of a reference
+    Not using level

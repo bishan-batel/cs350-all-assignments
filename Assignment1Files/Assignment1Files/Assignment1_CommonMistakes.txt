@@ -1,0 +1,24 @@
+Assignment 1 Grading Common Mistakes:
+Geometry.cpp:
+  Barycentric Coordinates:
+	Forgetting to check for zero division
+	Not using the epsilon
+	Not filling out the barycentric coords when the test returns false
+  PointSphere and PointAabb:
+	Not properly handling "<=" vs. "<"
+  RayPlane:
+	Not properly checking for a parallel ray
+  RayTriangle: 
+	Not using epsilon
+	Not early outing if the ray doesn't hit the plane
+  RaySphere:
+	The ray missing the sphere
+	The ray hitting the sphere but 1 or more t is invalid
+  RayAabb:
+	Calling RayPlane
+	Not handling a ray direction being 0
+  Frustum Tests:
+    Not correctly handling intersection vs. outside. See notes for an explanation)
+  
+Shapes.cpp:
+  Plane::Set: Not dealing with the plane normal being normalized

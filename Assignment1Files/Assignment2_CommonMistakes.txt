@@ -1,0 +1,39 @@
+Assignment 2 Grading Common Mistakes:
+Shapes.cpp:
+  Sphere:
+    ComputeCentroid:
+      Using the aabb's "radius" instead of finding the furthest away point
+    ComputeRitter:
+      Not properly choosing the axis with the longest length (actual point distance)
+    ComputeJacobiRotation:
+      Not finding the largest magnitude off diagonal element
+    ComputeEigenValuesAndVectors:
+      Not iterating
+    ComputePCA:
+      Not finding the furthest points along the axis of most spread and then expanding the sphere iteratively
+  Aabb:
+    Transform:
+      Transforming all 8 points
+      Not properly applying scale or translation
+    
+SimpleNSquared.cpp:
+  Insert/Update/Remove:
+    Not being constant time to find the item
+    Id being unstable
+    Using mClientData for more than storage (don't read it!)
+    Having a fixed size array that doesn't handle more than a reasonable number of objects
+  Queries:
+    Checking invalid nodes
+  DebugDrawing:
+    Setting properties on a copy instead of the reference
+    
+DebugDraw.cpp
+  In general, people never checking them
+  Sphere:
+    No horizon disc
+  Ray:
+    No arrow head
+  Plane:
+    No normal
+  Quad:
+    Not connecting edges in the correct order (creating bow-ties)

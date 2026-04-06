@@ -1,0 +1,14 @@
+
+////////////////////////////////////////////////////////////
+BspSimpleRayCast1
+////////////////////////////////////////////////////////////
+  false
+  Statistics: RayPlane(0) RayTri(0)
+  false
+  Statistics: RayPlane(0) RayTri(0)
+  false
+  Statistics: RayPlane(0) RayTri(0)
+  false
+  Statistics: RayPlane(0) RayTri(0)
+  false
+  Statistics: RayPlane(0) RayTri(0)
