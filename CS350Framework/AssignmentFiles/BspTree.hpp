@@ -125,6 +125,8 @@ private:
       int debugging_index
     ) const -> bool;
 
+    auto raycast_dumb(const Ray&, float& t, float plane_epsilon, float triangle_expansion_epsilon) const -> bool;
+
     auto get_triangles() const -> TriangleList;
 
     auto clip_triangles(const TriangleList& triangles, float epsilon) const -> TriangleList;

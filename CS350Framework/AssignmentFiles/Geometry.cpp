@@ -105,7 +105,7 @@ IntersectionType::Type PointPlane(const Vector3& point, const Vector4& plane, fl
   // if point is close enough to plane, consider it coplanar
   if (plane_to_point.LengthSq() < epsilon * epsilon) { return IntersectionType::Coplanar; }
 
-  if (plane_to_point.Normalized().Dot(Vector3{plane.x, plane.y, plane.z}) <= 0.f) { return IntersectionType::Outside; }
+  if (plane_to_point.Dot(Vector3{plane.x, plane.y, plane.z}) < -epsilon) { return IntersectionType::Outside; }
 
   return IntersectionType::Inside;
 }

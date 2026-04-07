@@ -252,9 +252,13 @@ bool BspTree::RayCast(
   /******Student:Assignment4******/
 
   t = Math::PositiveMax();
-  if (!root) { return false; }
+  if (root == nullptr) { return false; }
 
-  return root->raycast(ray, t, 0.f, Math::PositiveMax(), plane_epsilon, tri_expansion_epsilon, debugging_index);
+  (void)debugging_index;
+
+  return root->raycast_dumb(ray, t, plane_epsilon, tri_expansion_epsilon);
+
+  // return root->raycast(ray, t, 0.f, Math::PositiveMax(), plane_epsilon, tri_expansion_epsilon, debugging_index);
 }
 
 void BspTree::AllTriangles(TriangleList& triangles) const {
@@ -384,8 +388,7 @@ auto BspTree::Node::raycast(
           triangle_expansion_epsilon
         )};
 
-        if (!hit) { continue; }
-        if (t_hit > t_min && t_hit < t_max && t_hit < t) {
+        if (hit && t_hit >= t_min && t_hit <= t_max && t_hit < t) {
           t = t_hit;
           wrote = true;
         }
@@ -400,9 +403,9 @@ auto BspTree::Node::raycast(
      &t,
      plane_epsilon,
      triangle_expansion_epsilon,
-     debugging_index](const Node* side, const float t_min, const float t_max) -> bool {
+     debugging_index](const Node* side, const float min, const float max) -> bool {
       if (!side) { return false; }
-      return side->raycast(ray, t, t_min, t_max, plane_epsilon, triangle_expansion_epsilon, debugging_index);
+      return side->raycast(ray, t, min, max, plane_epsilon, triangle_expansion_epsilon, debugging_index);
     }
   };
 
@@ -411,32 +414,35 @@ auto BspTree::Node::raycast(
   // edge case 1
   if (ray_start_type == IntersectionType::Coplanar) {
     // visit both sides & geometry in plane
-    bool r = false;
-    r |= visit_side(left, t_min, t_max);
-    r |= visit_geometry(coplanar_front, t_min, t_max);
-    r |= visit_geometry(coplanar_back, t_min, t_max);
-    r |= visit_side(right, t_min, t_max);
-    return r;
+    return visit_side(left, t_min, t_max)               //
+        || visit_geometry(coplanar_front, t_min, t_max) //
+        || visit_geometry(coplanar_back, t_min, t_max)  //
+        || visit_side(right, t_min, t_max);
+  }
+
+  Node* near_side;
+  Node* far_side;
+  const TriangleList *coplanar_near, *coplanar_far;
+
+  if (ray_start_type == IntersectionType::Outside) {
+    near_side = left;
+    far_side = right;
+    coplanar_near = &coplanar_back;
+    coplanar_far = &coplanar_front;
+  } else {
+    near_side = right;
+    far_side = left;
+    coplanar_near = &coplanar_front;
+    coplanar_far = &coplanar_back;
   }
 
   float t_plane = 0.f;
   const bool did_hit = RayPlane(ray.mStart, ray.mDirection, split_plane.mData, t_plane, plane_epsilon);
 
-  Node* near_side;
-  Node* far_side;
-
-  if (ray_start_type == IntersectionType::Outside) {
-    near_side = left;
-    far_side = right;
-  } else {
-    near_side = right;
-    far_side = left;
-  }
-
   // edge case 2
   if (!did_hit) {
     // recurse down the near side
-    return visit_side(near_side, t_min, t_max);
+    return visit_side(near_side, t_min, t_max) || visit_geometry(*coplanar_near, t_min, t_max);
   }
 
   // case2
@@ -449,12 +455,37 @@ auto BspTree::Node::raycast(
   if (t_plane < t_min) { return visit_side(far_side, t_min, t_max); }
 
   // case1
-  if (visit_side(near_side, t_min, t_plane)) { return true; }
+  return visit_side(near_side, t_min, t_plane)          //
+      || visit_geometry(*coplanar_near, t_min, t_plane) //
+      || visit_geometry(*coplanar_far, t_plane, t_max)  //
+      || visit_side(far_side, t_plane, t_max);
+}
 
-  if (visit_geometry(coplanar_front, t_min, t_max)) { return true; }
-  if (visit_geometry(coplanar_back, t_min, t_max)) { return true; }
+auto BspTree::Node::raycast_dumb(const Ray& ray, float& t, float plane_epsilon, float triangle_expansion_epsilon) const
+  -> bool {
 
-  return visit_side(far_side, t_plane, t_max);
+  TriangleList triangles = get_triangles();
+
+  bool returns = false;
+
+  for (const Triangle& tri: triangles) {
+    float t_tmp = 0;
+    returns |= RayTriangle(
+      ray.mStart,
+      ray.mDirection,
+      tri.mPoints[0],
+      tri.mPoints[1],
+      tri.mPoints[2],
+      t_tmp,
+      triangle_expansion_epsilon
+    );
+    if (t_tmp > plane_epsilon) { t = Math::Min(t_tmp, t); }
+  }
+
+  if (left) { returns |= left->raycast_dumb(ray, t, plane_epsilon, triangle_expansion_epsilon); }
+  if (right) { returns |= right->raycast_dumb(ray, t, plane_epsilon, triangle_expansion_epsilon); }
+
+  return returns;
 }
 
 auto BspTree::Node::get_triangles() const -> TriangleList {
