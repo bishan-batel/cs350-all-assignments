@@ -780,11 +780,11 @@ TestBspTreeStructure6
 BspSimpleRayCast1
 ////////////////////////////////////////////////////////////
   false
-  Statistics: RayPlane(4) RayTri(1)
+  Statistics: RayPlane(5) RayTri(2)
   false
-  Statistics: RayPlane(4) RayTri(2)
-  false
-  Statistics: RayPlane(4) RayTri(1)
+  Statistics: RayPlane(5) RayTri(3)
+  t: 2.00
+  Statistics: RayPlane(5) RayTri(2)
   false
   Statistics: RayPlane(4) RayTri(2)
   false
@@ -794,11 +794,11 @@ BspSimpleRayCast1
 BspSimpleRayCast2
 ////////////////////////////////////////////////////////////
   false
-  Statistics: RayPlane(4) RayTri(1)
+  Statistics: RayPlane(5) RayTri(2)
   false
-  Statistics: RayPlane(4) RayTri(2)
-  false
-  Statistics: RayPlane(4) RayTri(1)
+  Statistics: RayPlane(5) RayTri(3)
+  t: 2.00
+  Statistics: RayPlane(5) RayTri(2)
   false
   Statistics: RayPlane(4) RayTri(2)
   false
@@ -807,12 +807,12 @@ BspSimpleRayCast2
 ////////////////////////////////////////////////////////////
 BspSimpleRayCast3
 ////////////////////////////////////////////////////////////
+  t: 3.89
+  Statistics: RayPlane(3) RayTri(1)
+  t: 2.83
+  Statistics: RayPlane(3) RayTri(1)
   false
-  Statistics: RayPlane(2) RayTri(0)
-  false
-  Statistics: RayPlane(2) RayTri(0)
-  false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(3) RayTri(1)
   false
   Statistics: RayPlane(2) RayTri(1)
   false
@@ -826,366 +826,378 @@ BspSimpleRayCast3
 BspSimpleRayCast4
 ////////////////////////////////////////////////////////////
   false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(4) RayTri(2)
   false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(3) RayTri(1)
   false
-  Statistics: RayPlane(2) RayTri(1)
+  Statistics: RayPlane(3) RayTri(2)
+  t: 2.83
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(2) RayTri(1)
+  Statistics: RayPlane(3) RayTri(1)
   false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(3) RayTri(1)
   false
-  Statistics: RayPlane(2) RayTri(0)
-  false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(3) RayTri(1)
 
 ////////////////////////////////////////////////////////////
 BspSimpleRayCast5
 ////////////////////////////////////////////////////////////
-  false
-  Statistics: RayPlane(4) RayTri(2)
-  false
-  Statistics: RayPlane(4) RayTri(2)
-  false
-  Statistics: RayPlane(4) RayTri(2)
-  false
-  Statistics: RayPlane(4) RayTri(2)
+  t: 1.50
+  Statistics: RayPlane(2) RayTri(1)
+  t: 1.50
+  Statistics: RayPlane(3) RayTri(1)
+  t: 1.50
+  Statistics: RayPlane(2) RayTri(1)
+  t: 1.50
+  Statistics: RayPlane(3) RayTri(1)
 
 ////////////////////////////////////////////////////////////
 BspSimpleRayCast6
 ////////////////////////////////////////////////////////////
-  false
+  t: 0.51
+  Statistics: RayPlane(2) RayTri(1)
+  t: 0.51
+  Statistics: RayPlane(2) RayTri(1)
+  t: 0.51
+  Statistics: RayPlane(2) RayTri(1)
+  t: 0.51
+  Statistics: RayPlane(2) RayTri(1)
+  t: 0.51
+  Statistics: RayPlane(1) RayTri(1)
+  t: 0.51
+  Statistics: RayPlane(1) RayTri(1)
+  t: 0.51
+  Statistics: RayPlane(1) RayTri(1)
+  t: 0.51
+  Statistics: RayPlane(1) RayTri(1)
+  t: 0.79
   Statistics: RayPlane(3) RayTri(2)
-  false
+  t: 0.79
   Statistics: RayPlane(3) RayTri(2)
-  false
+  t: 2.37
   Statistics: RayPlane(3) RayTri(2)
-  false
-  Statistics: RayPlane(3) RayTri(2)
-  false
-  Statistics: RayPlane(3) RayTri(2)
-  false
-  Statistics: RayPlane(3) RayTri(2)
-  false
-  Statistics: RayPlane(3) RayTri(2)
-  false
-  Statistics: RayPlane(3) RayTri(2)
-  false
-  Statistics: RayPlane(3) RayTri(2)
-  false
-  Statistics: RayPlane(3) RayTri(2)
-  false
-  Statistics: RayPlane(3) RayTri(2)
-  false
+  t: 2.37
   Statistics: RayPlane(3) RayTri(2)
 
 ////////////////////////////////////////////////////////////
 BspSimpleRayCast7
 ////////////////////////////////////////////////////////////
-  false
-  Statistics: RayPlane(6) RayTri(4)
-  false
-  Statistics: RayPlane(6) RayTri(4)
-  false
-  Statistics: RayPlane(6) RayTri(4)
-  false
-  Statistics: RayPlane(6) RayTri(4)
+  t: 0.33
+  Statistics: RayPlane(1) RayTri(1)
+  t: 0.38
+  Statistics: RayPlane(1) RayTri(1)
+  t: 0.17
+  Statistics: RayPlane(1) RayTri(1)
+  t: 0.12
+  Statistics: RayPlane(1) RayTri(1)
 
 ////////////////////////////////////////////////////////////
 BspSimpleRayCast8
 ////////////////////////////////////////////////////////////
+  t: 3.37
+  Statistics: RayPlane(7) RayTri(3)
   false
+  Statistics: RayPlane(10) RayTri(4)
+  false
+  Statistics: RayPlane(5) RayTri(2)
+  t: 3.15
+  Statistics: RayPlane(7) RayTri(3)
+  false
+  Statistics: RayPlane(7) RayTri(3)
+  t: 2.85
   Statistics: RayPlane(5) RayTri(1)
-  false
-  Statistics: RayPlane(8) RayTri(2)
-  false
-  Statistics: RayPlane(4) RayTri(1)
-  false
-  Statistics: RayPlane(5) RayTri(1)
-  false
-  Statistics: RayPlane(5) RayTri(1)
-  false
-  Statistics: RayPlane(8) RayTri(2)
-  false
-  Statistics: RayPlane(7) RayTri(2)
+  t: 2.23
+  Statistics: RayPlane(9) RayTri(4)
 
 ////////////////////////////////////////////////////////////
 BspRayCastStrestTest1
 ////////////////////////////////////////////////////////////
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(7) RayTri(5)
   false
-  Statistics: RayPlane(16) RayTri(10)
-  false
-  Statistics: RayPlane(14) RayTri(8)
-  false
-  Statistics: RayPlane(16) RayTri(10)
-  false
-  Statistics: RayPlane(21) RayTri(14)
+  Statistics: RayPlane(19) RayTri(13)
   false
   Statistics: RayPlane(18) RayTri(12)
   false
+  Statistics: RayPlane(19) RayTri(13)
+  t: 1.58
+  Statistics: RayPlane(13) RayTri(9)
+  t: 1.50
+  Statistics: RayPlane(8) RayTri(5)
+  t: 1.58
   Statistics: RayPlane(18) RayTri(12)
   false
-  Statistics: RayPlane(18) RayTri(12)
+  Statistics: RayPlane(20) RayTri(14)
   false
-  Statistics: RayPlane(15) RayTri(10)
+  Statistics: RayPlane(17) RayTri(12)
   false
-  Statistics: RayPlane(13) RayTri(8)
+  Statistics: RayPlane(16) RayTri(11)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(7) RayTri(5)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(7) RayTri(5)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(7) RayTri(5)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(7) RayTri(5)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(7) RayTri(5)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(7) RayTri(5)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(7) RayTri(5)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(7) RayTri(5)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(7) RayTri(5)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(7) RayTri(5)
 
 ////////////////////////////////////////////////////////////
 BspRayCastStrestTest2
 ////////////////////////////////////////////////////////////
+  t: 1.33
+  Statistics: RayPlane(7) RayTri(4)
   false
-  Statistics: RayPlane(5) RayTri(2)
+  Statistics: RayPlane(11) RayTri(7)
   false
-  Statistics: RayPlane(9) RayTri(5)
+  Statistics: RayPlane(13) RayTri(8)
   false
-  Statistics: RayPlane(10) RayTri(5)
+  Statistics: RayPlane(13) RayTri(8)
   false
-  Statistics: RayPlane(10) RayTri(5)
+  Statistics: RayPlane(8) RayTri(5)
   false
-  Statistics: RayPlane(6) RayTri(3)
+  Statistics: RayPlane(4) RayTri(2)
   false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(4) RayTri(2)
   false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(4) RayTri(2)
   false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(4) RayTri(2)
   false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(8) RayTri(5)
   false
-  Statistics: RayPlane(5) RayTri(2)
+  Statistics: RayPlane(5) RayTri(3)
   false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(8) RayTri(5)
   false
-  Statistics: RayPlane(6) RayTri(3)
+  Statistics: RayPlane(8) RayTri(5)
   false
-  Statistics: RayPlane(6) RayTri(3)
+  Statistics: RayPlane(8) RayTri(5)
   false
-  Statistics: RayPlane(6) RayTri(3)
+  Statistics: RayPlane(12) RayTri(8)
+  t: 0.67
+  Statistics: RayPlane(8) RayTri(5)
+  t: 0.56
+  Statistics: RayPlane(7) RayTri(4)
+  t: 0.71
+  Statistics: RayPlane(7) RayTri(4)
   false
-  Statistics: RayPlane(9) RayTri(5)
+  Statistics: RayPlane(8) RayTri(5)
   false
-  Statistics: RayPlane(5) RayTri(2)
-  false
-  Statistics: RayPlane(5) RayTri(2)
-  false
-  Statistics: RayPlane(5) RayTri(2)
-  false
-  Statistics: RayPlane(5) RayTri(2)
-  false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(5) RayTri(3)
 
 ////////////////////////////////////////////////////////////
 BspRayCastStrestTest3
 ////////////////////////////////////////////////////////////
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(6) RayTri(4)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(6) RayTri(4)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(6) RayTri(4)
   false
-  Statistics: RayPlane(8) RayTri(4)
-  false
-  Statistics: RayPlane(6) RayTri(2)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(4) RayTri(2)
-  false
-  Statistics: RayPlane(4) RayTri(2)
-  false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(10) RayTri(6)
   false
   Statistics: RayPlane(8) RayTri(4)
   false
-  Statistics: RayPlane(6) RayTri(2)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(6) RayTri(4)
+  t: 458.36
+  Statistics: RayPlane(6) RayTri(4)
+  t: 370.82
+  Statistics: RayPlane(6) RayTri(4)
+  t: 458.36
+  Statistics: RayPlane(10) RayTri(6)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(8) RayTri(4)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(7) RayTri(4)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(5) RayTri(2)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(4) RayTri(2)
-  false
-  Statistics: RayPlane(4) RayTri(2)
-  false
-  Statistics: RayPlane(4) RayTri(2)
-  false
-  Statistics: RayPlane(7) RayTri(4)
-  false
-  Statistics: RayPlane(5) RayTri(2)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(4) RayTri(2)
-  false
-  Statistics: RayPlane(4) RayTri(2)
-  false
-  Statistics: RayPlane(4) RayTri(2)
+  Statistics: RayPlane(6) RayTri(4)
+  t: 370.82
+  Statistics: RayPlane(6) RayTri(4)
+  t: 300.00
+  Statistics: RayPlane(6) RayTri(4)
+  t: 370.82
+  Statistics: RayPlane(9) RayTri(6)
   false
   Statistics: RayPlane(7) RayTri(4)
   false
-  Statistics: RayPlane(5) RayTri(2)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(3) RayTri(2)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(3) RayTri(2)
+  false
+  Statistics: RayPlane(3) RayTri(2)
+  false
+  Statistics: RayPlane(3) RayTri(2)
+  false
+  Statistics: RayPlane(6) RayTri(4)
+  t: 458.36
+  Statistics: RayPlane(6) RayTri(4)
+  t: 370.82
+  Statistics: RayPlane(6) RayTri(4)
+  t: 458.36
+  Statistics: RayPlane(9) RayTri(6)
+  false
+  Statistics: RayPlane(7) RayTri(4)
+  false
+  Statistics: RayPlane(3) RayTri(2)
+  false
+  Statistics: RayPlane(3) RayTri(2)
+  false
+  Statistics: RayPlane(3) RayTri(2)
+  false
+  Statistics: RayPlane(3) RayTri(2)
+  false
+  Statistics: RayPlane(3) RayTri(2)
+  false
+  Statistics: RayPlane(6) RayTri(4)
+  false
+  Statistics: RayPlane(6) RayTri(4)
+  false
+  Statistics: RayPlane(6) RayTri(4)
+  false
+  Statistics: RayPlane(9) RayTri(6)
+  false
+  Statistics: RayPlane(7) RayTri(4)
+  false
+  Statistics: RayPlane(3) RayTri(2)
+  false
+  Statistics: RayPlane(3) RayTri(2)
 
 ////////////////////////////////////////////////////////////
 BspRayCastStrestTest5
 ////////////////////////////////////////////////////////////
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(7) RayTri(2)
-  false
-  Statistics: RayPlane(3) RayTri(1)
-  false
-  Statistics: RayPlane(3) RayTri(1)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(1) RayTri(0)
-  false
-  Statistics: RayPlane(9) RayTri(4)
+  Statistics: RayPlane(2) RayTri(1)
   false
   Statistics: RayPlane(8) RayTri(3)
   false
-  Statistics: RayPlane(3) RayTri(1)
+  Statistics: RayPlane(4) RayTri(2)
   false
-  Statistics: RayPlane(3) RayTri(1)
+  Statistics: RayPlane(4) RayTri(2)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
+  Statistics: RayPlane(2) RayTri(1)
+  false
+  Statistics: RayPlane(2) RayTri(1)
+  t: 300.00
   Statistics: RayPlane(7) RayTri(2)
-  false
+  t: 214.78
   Statistics: RayPlane(9) RayTri(4)
+  t: 238.08
+  Statistics: RayPlane(4) RayTri(2)
   false
-  Statistics: RayPlane(5) RayTri(2)
+  Statistics: RayPlane(4) RayTri(2)
   false
-  Statistics: RayPlane(5) RayTri(2)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(3) RayTri(1)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(3) RayTri(1)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(2) RayTri(1)
   false
-  Statistics: RayPlane(1) RayTri(0)
+  Statistics: RayPlane(8) RayTri(3)
+  t: 214.78
+  Statistics: RayPlane(9) RayTri(4)
+  t: 174.64
+  Statistics: RayPlane(6) RayTri(3)
+  t: 186.66
+  Statistics: RayPlane(6) RayTri(3)
   false
-  Statistics: RayPlane(5) RayTri(1)
+  Statistics: RayPlane(4) RayTri(2)
+  false
+  Statistics: RayPlane(4) RayTri(2)
+  false
+  Statistics: RayPlane(2) RayTri(1)
+  false
+  Statistics: RayPlane(2) RayTri(1)
+  false
+  Statistics: RayPlane(2) RayTri(1)
   false
   Statistics: RayPlane(6) RayTri(2)
   false
+  Statistics: RayPlane(7) RayTri(3)
+  t: 238.08
+  Statistics: RayPlane(5) RayTri(2)
+  t: 216.97
+  Statistics: RayPlane(6) RayTri(3)
+  t: 223.81
+  Statistics: RayPlane(6) RayTri(3)
+  false
+  Statistics: RayPlane(6) RayTri(3)
+  false
+  Statistics: RayPlane(6) RayTri(3)
+  false
+  Statistics: RayPlane(6) RayTri(3)
+  false
   Statistics: RayPlane(5) RayTri(2)
   false
   Statistics: RayPlane(5) RayTri(2)
@@ -1193,18 +1205,6 @@ BspRayCastStrestTest5
   Statistics: RayPlane(5) RayTri(2)
   false
   Statistics: RayPlane(5) RayTri(2)
-  false
-  Statistics: RayPlane(5) RayTri(2)
-  false
-  Statistics: RayPlane(5) RayTri(2)
-  false
-  Statistics: RayPlane(4) RayTri(1)
-  false
-  Statistics: RayPlane(4) RayTri(1)
-  false
-  Statistics: RayPlane(4) RayTri(1)
-  false
-  Statistics: RayPlane(4) RayTri(1)
 
 ////////////////////////////////////////////////////////////
 BspCsgSimple1

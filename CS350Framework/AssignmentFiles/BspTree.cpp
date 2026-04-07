@@ -258,8 +258,7 @@ bool BspTree::RayCast(
   (void)debugging_index;
 
   // return root->raycast_dumb(ray, t, plane_epsilon, tri_expansion_epsilon);
-  return root
-    ->raycast(ray, t, -Math::PositiveMax(), Math::PositiveMax(), plane_epsilon, tri_expansion_epsilon, debugging_index);
+  return root->raycast(ray, t, 0, Math::PositiveMax(), plane_epsilon, tri_expansion_epsilon, debugging_index);
 }
 
 void BspTree::AllTriangles(TriangleList& triangles) const {
@@ -389,7 +388,7 @@ auto BspTree::Node::raycast(
           triangle_expansion_epsilon
         )};
 
-        if (hit && t_hit >= t_min && t_hit < t_max && t < t_hit) {
+        if (hit && t_hit >= t_min && t_hit <= t_max) {
           t = Math::Min(t, t_hit);
           wrote = true;
         }
@@ -446,28 +445,28 @@ auto BspTree::Node::raycast(
   if (!did_hit) {
     // recurse down the near side
     bool r = visit_side(near_side, t_min, t_max);
-    // r = r || visit_geometry(*coplanar_near, t_min, t_max);
+    r = r || visit_geometry(*coplanar_near, t_min, t_max);
     return r;
   }
 
   // case2
   if (t_plane < 0.f) {
     bool r = visit_side(near_side, t_min, t_max);
-    // r = r || visit_geometry(*coplanar_near, t_min, t_max);
+    r = r || visit_geometry(*coplanar_near, t_min, t_max);
     return r;
   }
 
   // case3
   if (t_max < t_plane) {
     bool r = visit_side(near_side, t_min, t_max);
-    // r = r || visit_geometry(*coplanar_near, t_min, t_max);
+    r = r || visit_geometry(*coplanar_near, t_min, t_max);
     return r;
   }
 
   // case4
   if (t_plane < t_min && 0 < t_plane) {
     bool r = visit_side(far_side, t_min, t_max);
-    // r = r || visit_geometry(*coplanar_far, t_min, t_max);
+    r = r || visit_geometry(*coplanar_far, t_min, t_max);
     return r;
   }
 
