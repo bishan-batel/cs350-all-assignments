@@ -258,7 +258,8 @@ bool BspTree::RayCast(
   (void)debugging_index;
 
   // return root->raycast_dumb(ray, t, plane_epsilon, tri_expansion_epsilon);
-  return root->raycast(ray, t, 0, Math::PositiveMax(), plane_epsilon, tri_expansion_epsilon, debugging_index);
+  return root
+    ->raycast(ray, t, -Math::PositiveMax(), Math::PositiveMax(), plane_epsilon, tri_expansion_epsilon, debugging_index);
 }
 
 void BspTree::AllTriangles(TriangleList& triangles) const {
@@ -365,8 +366,8 @@ auto BspTree::Node::fillout_data(std::vector<BspTreeQueryData>& results) const -
 auto BspTree::Node::raycast(
   const Ray& ray,
   float& t,
-  const float t_min,
-  const float t_max,
+  float t_min,
+  float t_max,
   const float plane_epsilon,
   const float triangle_expansion_epsilon,
   const int debugging_index
@@ -381,15 +382,15 @@ auto BspTree::Node::raycast(
         const bool hit{RayTriangle(
           ray.mStart,
           ray.mDirection.Normalized(),
-          tri.mPoints[2],
           tri.mPoints[0],
           tri.mPoints[1],
+          tri.mPoints[2],
           t_hit,
           triangle_expansion_epsilon
         )};
 
-        if (hit && t_hit > t_min && t_hit < t_max && t_hit < t) {
-          t = t_hit;
+        if (hit && t_hit >= t_min && t_hit < t_max && t < t_hit) {
+          t = Math::Min(t, t_hit);
           wrote = true;
         }
       }
@@ -414,26 +415,28 @@ auto BspTree::Node::raycast(
   // edge case 1
   if (ray_start_type == IntersectionType::Coplanar) {
     // visit both sides & geometry in plane
-    return visit_side(front, t_min, t_max)              //
-        || visit_geometry(coplanar_front, t_min, t_max) //
-        || visit_geometry(coplanar_back, t_min, t_max)  //
-        || visit_side(back, t_min, t_max);
+    bool r = false;
+    r = r || visit_geometry(coplanar_back, t_min, t_max);
+    r = r || visit_side(back, t_min, t_max);
+    r = r || visit_side(front, t_min, t_max);
+    r = r || visit_geometry(coplanar_front, t_min, t_max);
+    return r;
   }
 
   Node* near_side;
   Node* far_side;
   const TriangleList *coplanar_near, *coplanar_far;
 
-  if (ray_start_type == IntersectionType::Outside) {
+  if (ray_start_type == IntersectionType::Behind) {
     near_side = front;
     far_side = back;
-    coplanar_near = &coplanar_back;
-    coplanar_far = &coplanar_front;
+    coplanar_near = &coplanar_front;
+    coplanar_far = &coplanar_back;
   } else {
     near_side = back;
     far_side = front;
-    coplanar_near = &coplanar_front;
-    coplanar_far = &coplanar_back;
+    coplanar_near = &coplanar_back;
+    coplanar_far = &coplanar_front;
   }
 
   float t_plane = 0.f;
@@ -442,23 +445,44 @@ auto BspTree::Node::raycast(
   // edge case 2
   if (!did_hit) {
     // recurse down the near side
-    return visit_side(near_side, t_min, t_max) || visit_geometry(*coplanar_near, t_min, t_max);
+    bool r = visit_side(near_side, t_min, t_max);
+    // r = r || visit_geometry(*coplanar_near, t_min, t_max);
+    return r;
   }
 
   // case2
-  if (t_plane < 0.f) { return visit_side(near_side, t_min, t_max); }
+  if (t_plane < 0.f) {
+    bool r = visit_side(near_side, t_min, t_max);
+    // r = r || visit_geometry(*coplanar_near, t_min, t_max);
+    return r;
+  }
 
   // case3
-  if (t_plane > t_max) { return visit_side(near_side, t_min, t_max); }
+  if (t_max < t_plane) {
+    bool r = visit_side(near_side, t_min, t_max);
+    // r = r || visit_geometry(*coplanar_near, t_min, t_max);
+    return r;
+  }
 
   // case4
-  if (t_plane < t_min) { return visit_side(far_side, t_min, t_max); }
+  if (t_plane < t_min && 0 < t_plane) {
+    bool r = visit_side(far_side, t_min, t_max);
+    // r = r || visit_geometry(*coplanar_far, t_min, t_max);
+    return r;
+  }
 
   // case1
-  return visit_side(near_side, t_min, t_max)          //
-      || visit_geometry(*coplanar_near, t_min, t_max) //
-      || visit_geometry(*coplanar_far, t_min, t_max)  //
-      || visit_side(far_side, t_min, t_max);
+
+  assert(t_min <= t_plane && t_plane <= t_max);
+
+  float t_epsilon = Math::Abs(plane_epsilon / split_plane.GetNormal().Normalized().Dot(ray.mDirection.Normalized()));
+
+  bool r = false;
+  r = r || visit_side(near_side, t_min, t_plane + t_epsilon); //
+  r = r || visit_side(far_side, t_plane - t_epsilon, t_max);
+  r = r || visit_geometry(*coplanar_near, t_min, t_max);      //
+  r = r || visit_geometry(*coplanar_far, t_min, t_max);       //
+  return r;
 }
 
 auto BspTree::Node::raycast_dumb(const Ray& ray, float& t, float plane_epsilon, float triangle_expansion_epsilon) const
