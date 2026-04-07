@@ -102,8 +102,8 @@ private:
 
   struct Node final {
     Node* parent;
-    Node* left;
-    Node* right;
+    Node* front;
+    Node* back;
 
     Plane split_plane{};
 
@@ -156,7 +156,7 @@ private:
   static auto for_all_nodes(Node* node, F func) -> void {
     if (node == nullptr) { return; }
     func(node);
-    if (node->left) { for_all_nodes(node->left, func); }
-    if (node->right) { for_all_nodes(node->right, func); }
+    if (node->front) { for_all_nodes(node->front, func); }
+    if (node->back) { for_all_nodes(node->back, func); }
   }
 };
