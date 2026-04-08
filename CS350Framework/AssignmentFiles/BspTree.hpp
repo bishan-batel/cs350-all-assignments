@@ -1,9 +1,12 @@
-///////////////////////////////////////////////////////////////////////////////
-///
-/// Authors: Joshua Davis
-/// Copyright 2015, DigiPen Institute of Technology
-///
-///////////////////////////////////////////////////////////////////////////////
+/* Start Header ------------------------------------------------------
+Copyright (C) 2025 DigiPen Institute of Technology.
+File Name: BspTree.hpp
+Purpose: Binary Spatial Partioning Header
+Language: MSVC, C++, English, English 2, English 3, All the englishes
+Platform: Windows
+Project: kishan.patel_CS350_4
+Author: Kishan S Patel kishan.patel 006624
+End Header -------------------------------------------------------*/
 #pragma once
 
 #include "Shapes.hpp"
