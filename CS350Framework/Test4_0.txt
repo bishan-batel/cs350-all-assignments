@@ -807,38 +807,38 @@ BspSimpleRayCast2
 ////////////////////////////////////////////////////////////
 BspSimpleRayCast3
 ////////////////////////////////////////////////////////////
+  t: 3.89
+  Statistics: RayPlane(5) RayTri(2)
+  t: 2.83
+  Statistics: RayPlane(5) RayTri(2)
   false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(5) RayTri(2)
+  t: 2.83
+  Statistics: RayPlane(4) RayTri(2)
   false
-  Statistics: RayPlane(2) RayTri(0)
-  false
-  Statistics: RayPlane(2) RayTri(0)
-  false
-  Statistics: RayPlane(2) RayTri(0)
-  false
-  Statistics: RayPlane(2) RayTri(0)
-  false
-  Statistics: RayPlane(2) RayTri(0)
-  false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(5) RayTri(3)
+  t: 2.83
+  Statistics: RayPlane(5) RayTri(2)
+  t: 1.77
+  Statistics: RayPlane(5) RayTri(2)
 
 ////////////////////////////////////////////////////////////
 BspSimpleRayCast4
 ////////////////////////////////////////////////////////////
+  t: 1.77
+  Statistics: RayPlane(5) RayTri(2)
+  t: 2.83
+  Statistics: RayPlane(5) RayTri(2)
   false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(5) RayTri(3)
+  t: 2.83
+  Statistics: RayPlane(4) RayTri(2)
   false
-  Statistics: RayPlane(2) RayTri(0)
-  false
-  Statistics: RayPlane(2) RayTri(0)
-  false
-  Statistics: RayPlane(2) RayTri(0)
-  false
-  Statistics: RayPlane(2) RayTri(0)
-  false
-  Statistics: RayPlane(2) RayTri(0)
-  false
-  Statistics: RayPlane(2) RayTri(0)
+  Statistics: RayPlane(5) RayTri(2)
+  t: 2.83
+  Statistics: RayPlane(5) RayTri(2)
+  t: 3.89
+  Statistics: RayPlane(5) RayTri(2)
 
 ////////////////////////////////////////////////////////////
 BspSimpleRayCast5
@@ -856,29 +856,29 @@ BspSimpleRayCast5
 BspSimpleRayCast6
 ////////////////////////////////////////////////////////////
   t: 0.51
-  Statistics: RayPlane(3) RayTri(2)
+  Statistics: RayPlane(4) RayTri(3)
+  t: 0.51
+  Statistics: RayPlane(4) RayTri(3)
   t: 0.51
   Statistics: RayPlane(3) RayTri(2)
   t: 0.51
   Statistics: RayPlane(3) RayTri(2)
   t: 0.51
-  Statistics: RayPlane(3) RayTri(2)
+  Statistics: RayPlane(4) RayTri(3)
   t: 0.51
-  Statistics: RayPlane(3) RayTri(2)
-  t: 0.51
-  Statistics: RayPlane(3) RayTri(2)
+  Statistics: RayPlane(4) RayTri(3)
   t: 0.51
   Statistics: RayPlane(3) RayTri(2)
   t: 0.51
   Statistics: RayPlane(3) RayTri(2)
   t: 0.79
-  Statistics: RayPlane(3) RayTri(2)
+  Statistics: RayPlane(4) RayTri(3)
   t: 0.79
-  Statistics: RayPlane(3) RayTri(2)
+  Statistics: RayPlane(4) RayTri(3)
   t: 0.79
-  Statistics: RayPlane(3) RayTri(2)
+  Statistics: RayPlane(4) RayTri(3)
   t: 0.79
-  Statistics: RayPlane(3) RayTri(2)
+  Statistics: RayPlane(4) RayTri(3)
 
 ////////////////////////////////////////////////////////////
 BspSimpleRayCast7
@@ -895,18 +895,18 @@ BspSimpleRayCast7
 ////////////////////////////////////////////////////////////
 BspSimpleRayCast8
 ////////////////////////////////////////////////////////////
-  t: 4.23
-  Statistics: RayPlane(5) RayTri(2)
+  t: 3.37
+  Statistics: RayPlane(11) RayTri(5)
   t: 2.89
-  Statistics: RayPlane(13) RayTri(6)
+  Statistics: RayPlane(11) RayTri(5)
   t: 0.55
   Statistics: RayPlane(6) RayTri(2)
   t: 2.49
-  Statistics: RayPlane(5) RayTri(1)
-  t: 2.28
-  Statistics: RayPlane(5) RayTri(1)
+  Statistics: RayPlane(11) RayTri(4)
+  t: 2.15
+  Statistics: RayPlane(6) RayTri(2)
   t: 1.95
-  Statistics: RayPlane(13) RayTri(6)
+  Statistics: RayPlane(12) RayTri(5)
   t: 0.41
   Statistics: RayPlane(10) RayTri(5)
 
@@ -962,9 +962,9 @@ BspRayCastStrestTest2
   t: 1.70
   Statistics: RayPlane(13) RayTri(5)
   t: 1.05
-  Statistics: RayPlane(16) RayTri(8)
+  Statistics: RayPlane(11) RayTri(5)
   t: 0.79
-  Statistics: RayPlane(18) RayTri(10)
+  Statistics: RayPlane(13) RayTri(7)
   t: 0.72
   Statistics: RayPlane(10) RayTri(5)
   t: 1.00
@@ -976,7 +976,7 @@ BspRayCastStrestTest2
   t: 0.71
   Statistics: RayPlane(9) RayTri(4)
   t: 0.56
-  Statistics: RayPlane(16) RayTri(8)
+  Statistics: RayPlane(14) RayTri(6)
   t: 1.00
   Statistics: RayPlane(8) RayTri(4)
   t: 0.72
@@ -986,7 +986,7 @@ BspRayCastStrestTest2
   t: 1.05
   Statistics: RayPlane(7) RayTri(3)
   t: 1.70
-  Statistics: RayPlane(15) RayTri(7)
+  Statistics: RayPlane(13) RayTri(5)
   t: 0.67
   Statistics: RayPlane(16) RayTri(8)
   t: 0.56
