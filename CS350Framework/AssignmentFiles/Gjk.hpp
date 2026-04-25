@@ -22,7 +22,7 @@ public:
   virtual void DebugDraw(const Vector4& color = Vector4::cZero) const = 0;
 
   Vector3 GetCenter(const std::vector<Vector3>& localPoints, const Matrix4& localToWorldTransform) const;
-  Vector3 Support(const Vector3& worldDirection, const std::vector<Vector3>& localPoints, const Matrix4& localToWorldTransform) const;
+  Vector3 Support(const Vector3& world_direction, const std::vector<Vector3>& local_points, const Matrix4& local_to_world_transform) const;
   void DebugDraw(const std::vector<Vector3>& localPoints, const Matrix4& transform, const Vector4& color = Vector4::cZero) const;
 };
 
@@ -111,13 +111,13 @@ public:
 
   // Triangle Test
   static VoronoiRegion::Type IdentifyVoronoiRegion(const Vector3& q, const Vector3& p0, const Vector3& p1, const Vector3& p2,
-                                                   size_t& newSize, int newIndices[4],
-                                                   Vector3& closestPoint, Vector3& searchDirection);
+                                                   size_t& new_size, int new_indices[4],
+                                                   Vector3& closest_point, Vector3& search_direction);
 
   // Tetrahedron Tests
   static VoronoiRegion::Type IdentifyVoronoiRegion(const Vector3& q, const Vector3& p0, const Vector3& p1, const Vector3& p2, const Vector3& p3,
-                                                   size_t& newSize, int newIndices[4],
-                                                   Vector3& closestPoint, Vector3& searchDirection);
+                                                   size_t& new_size, int new_indices[4],
+                                                   Vector3& closest_point, Vector3& search_direction);
 
   // Simple structure that contains all information for a point in Gjk.
   struct CsoPoint
@@ -132,9 +132,9 @@ public:
   // Returns true if the shapes intersect. If the shapes don't intersect then closestPoint is filled out with the closest points
   // on each object as well as the cso point. Epsilon should be used for checking if sufficient progress has been made at any step.
   // The debugging values are for your own use (make sure they don't interfere with the unit tests).
-  bool Intersect(const SupportShape* shapeA, const SupportShape* shapeB, unsigned int maxIterations, CsoPoint& closestPoint, float epsilon, int debuggingIndex, bool debugDraw);
+  bool Intersect(const SupportShape* shape_a, const SupportShape* shape_b, unsigned int max_iterations, CsoPoint& closest_point, float epsilon, int debugging_index, bool debug_draw);
   // Finds the point furthest in the given direction on the CSO (and the relevant points from each object)
-  CsoPoint ComputeSupport(const SupportShape* shapeA, const SupportShape* shapeB, const Vector3& direction);
+  CsoPoint ComputeSupport(const SupportShape* shape_a, const SupportShape* shape_b, const Vector3& direction);
 
   
 
